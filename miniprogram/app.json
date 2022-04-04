@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/my/my",
+    "pages/index/index",
+    "pages/getOpenId/index",
+    "pages/getMiniProgramCode/index",
+    "pages/deployService/index",
+    "pages/createCollection/index",
+    "pages/uploadFile/index",
+    "pages/selectRecord/index",
+    "pages/updateRecord/index",
+    "pages/updateRecordResult/index",
+    "pages/updateRecordSuccess/index",
+    "pages/sumRecord/index",
+    "pages/sumRecordResult/index"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "跨学科学术组织评价系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#0000dd",
+    "color": "#909090",
+    "list": [
+      {
+        "text": "问卷",
+        "iconPath": "images/tabbar/answer.png",
+        "selectedIconPath": "images/tabbar/answer-select.png",
+        "pagePath": "pages/home/home"
+      },
+      {
+        "text": "我的",
+        "iconPath": "images/tabbar/my.png",
+        "selectedIconPath": "images/tabbar/my-select.png",
+        "pagePath": "pages/my/my"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

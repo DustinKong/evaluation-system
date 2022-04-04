@@ -1,0 +1,1 @@
+"D:\wechat_develop\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-9gw00z6jf0901e86 --n quickstartFunctions --r --project "D:\wechat_develop\跨学科学术组织评价系统" --report_first --report
