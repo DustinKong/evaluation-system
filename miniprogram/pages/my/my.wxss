@@ -1,1 +1,25 @@
 /* pages/my/my.wxss */
+.pic{
+  height: 150rpx;
+  width: 150rpx;
+}
+.button {
+  width: 300rpx;
+  text-align: center;
+  height: 80rpx;
+  color: white;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: #07c160;
+}
+.button-login{
+  text-align: center;
+  height: 80rpx;
+  color: white;
+  border-radius: 5px;
+  background-color: #07c160;
+}
+.align{
+  align-items: center;
+  justify-content:space-evenly;
+}

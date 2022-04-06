@@ -2,3 +2,4 @@
   <view slot="backText">返回</view>
   <view slot="content">跨学科学术组织评价系统</view>
 </cu-custom>
+<button bindtap="go">go</button>

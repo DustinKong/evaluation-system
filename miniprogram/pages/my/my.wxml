@@ -1,4 +1,22 @@
-<cu-custom bgColor="bg-gradual-my" isBack="{{false}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
   <view slot="backText">返回</view>
   <view slot="content">跨学科学术组织评价系统</view>
 </cu-custom>
+
+<view wx:if="{{state==0}}" class="flex bg-grey align" style="height: 250rpx;">
+  <image wx:if="{{!userInfo}}" src="/images/pic.png" class="round pic"></image>
+  <image wx:else src="{{userInfo.avatarUrl}}" class="round pic"></image>
+  <view wx:if="{{openId==''}}" class="button" bindtap="getOpenId">获取OpenId</view>
+</view>
+
+<view wx:if="{{state==1}}" class="flex bg-grey align" style="height: 250rpx;">
+  <image src="/images/pic.png" style="position:relative;left: 100rpx;" class="round pic"></image>
+  <button  class="button-login" style="width: 300rpx;position:relative;left: 50rpx;font-size: small;" bindtap="getUserProfile">获取头像信息</button>
+</view>
+
+<view wx:if="{{state==2}}" class="flex bg-grey align" style="height: 250rpx;">
+  <image wx:if="{{!userInfo}}" src="/images/pic.png" class="round pic"></image>
+  <image wx:else src="{{userInfo.avatarUrl}}" class="round pic"></image>
+  <view class="text-xxl text-white text-bold">{{userInfo.nickName}}</view>
+</view>
+
