@@ -11,12 +11,21 @@
 
 <view wx:if="{{state==1}}" class="flex bg-grey align" style="height: 250rpx;">
   <image src="/images/pic.png" style="position:relative;left: 100rpx;" class="round pic"></image>
-  <button  class="button-login" style="width: 300rpx;position:relative;left: 50rpx;font-size: small;" bindtap="getUserProfile">获取头像信息</button>
+  <button class="button-login" style="width: 300rpx;position:relative;left: 50rpx;font-size: small;" bindtap="getUserProfile">获取头像信息</button>
 </view>
 
-<view wx:if="{{state==2}}" class="flex bg-grey align" style="height: 250rpx;">
+<view wx:if="{{state==2}}" class="flex bg-grey alignshow" style="height: 250rpx;">
   <image wx:if="{{!userInfo}}" src="/images/pic.png" class="round pic"></image>
   <image wx:else src="{{userInfo.avatarUrl}}" class="round pic"></image>
-  <view class="text-xxl text-white text-bold">{{userInfo.nickName}}</view>
+  <view class="text-xxl padding text-white text-bold">{{userInfo.nickName}}</view>
 </view>
-
+<view class="flex two" >
+  <view class="align2 padding" bindtap="gohelp">
+    <image src="/images/question.png" class="logo"></image>
+    <view class="text-xl text-bold padding">帮助中心</view>
+  </view>
+  <view class="align2 padding" bindtap="goabout">
+    <image src="/images/about.png" class="logo"></image>
+    <view  class="text-xl text-bold padding">关于</view>
+  </view>
+</view>

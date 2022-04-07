@@ -13,7 +13,8 @@
     "pages/updateRecordResult/index",
     "pages/updateRecordSuccess/index",
     "pages/sumRecord/index",
-    "pages/sumRecordResult/index"
+    "pages/sumRecordResult/index",
+    "pages/my_about/my_about"
   ],
   "window": {
     "navigationStyle": "custom",

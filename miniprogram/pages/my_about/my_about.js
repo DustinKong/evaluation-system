@@ -1,26 +1,13 @@
-// pages/home/home.js
+// pages/my_about/my_about.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiperList: [{
-      'id':0,
-      'url': '/images/swiper1.png'
-    }, {
-      'id':1,
-      'url': '/images/swiper2.png'
-    }, {
-      'id':2,
-      'url': '/images/swiper3.png'
-    }]
+
   },
-  go() {
-    wx.navigateTo({
-      url: '/pages/index/index',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

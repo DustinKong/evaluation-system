@@ -1,0 +1,6 @@
+/* pages/my_about/my_about.wxss */
+.title{
+  position: relative;
+  top: 50rpx;
+  font-size: x-large;
+}

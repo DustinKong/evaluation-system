@@ -1,0 +1,17 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">关于</view>
+</cu-custom>
+<image src="/images/pic.png"></image>
+<view class="title text-center">
+  浙江工商大学
+</view>
+<view class="title padding text-center">
+  计算机科学与技术 
+</view>
+<view class="title padding text-center">
+  计科1802 方正 
+</view>
+
+
+
