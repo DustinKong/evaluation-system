@@ -14,7 +14,9 @@
     "pages/updateRecordSuccess/index",
     "pages/sumRecord/index",
     "pages/sumRecordResult/index",
-    "pages/my_about/my_about"
+    "pages/my_about/my_about",
+    "pages/question/question",
+    "pages/report/report"
   ],
   "window": {
     "navigationStyle": "custom",

@@ -11,11 +11,11 @@
   </swiper-item>
 </swiper>
 <view class="flex two">
-  <view class="align">
+  <view class="align" bindtap="go1">
     <image src="/images/01.png" class="pic"></image>
     <view class="text-xl text-bold">问卷测评</view>
   </view>
-  <view class="align">
+  <view class="align" bindtap="go2">
     <image src="/images/02.png" class="pic"></image>
     <view  class="text-xl text-bold">分析报告</view>
   </view>
