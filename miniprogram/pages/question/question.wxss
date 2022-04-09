@@ -1,1 +1,73 @@
 /* pages/question/question.wxss */
+.arrow{
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #999;
+  border-right: 2px solid #999;
+  transform: rotate(-135deg);
+  margin-top:60rpx;
+  margin-left: 60rpx;
+  }
+  
+  .backContent{
+    margin-top:40rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  #back{
+    display: flex;
+    flex-direction: row;
+    border: 4px solid #999;
+  }
+  
+  #title{
+    display: flex;
+    flex-direction: row;
+    background-color: #E3E3E3;
+    padding: 30rpx;
+  }
+
+  .titleContent{
+    margin-inline: 50rpx;
+    font-size: 35rpx;
+  }
+  
+ 
+  .SAQ{
+    padding: 10rpx;
+    border: 4rpx solid #999;
+  }
+  
+  
+  .SAQTitle{
+    display: flex;
+    flex-direction: row;
+    font-size: 30rpx;
+  }
+ 
+  .SAQAnswer{
+    border: 4px solid #999;
+  }
+  
+  .SAQDiscription{
+    /* border: 2rpx solid #999; */
+    width: 80%;
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+  
+  .SAQdeleteIcon{
+    width: 60rpx;
+    margin-left: 50rpx;
+  }
+
+  #body{
+    margin-top: 50rpx;
+  }
+  
+  .weui-btn{
+    width: 30%;
+    margin-bottom: 10rpx;
+    margin-top: 20rpx;
+    margin-inline: auto;
+  }

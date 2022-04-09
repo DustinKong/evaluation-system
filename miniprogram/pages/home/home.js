@@ -22,14 +22,37 @@ Page({
     })
   },
   go1() {
+    if(!this.judge())
+      return;
     wx.navigateTo({
       url: '/pages/question/question',
     })
   },
   go2() {
+    if(!this.judge())
+    return;
     wx.navigateTo({
       url: '/pages/report/report',
     })
+  },
+  judge() {
+    let type = wx.getStorageSync('type')
+    if (type == 0 || type == null) {
+      wx.showToast({
+        title: '请先设置人员属性',
+        icon: 'none',
+        duration: 2000,
+        success: function () {
+          setTimeout(function () {
+            wx.redirectTo({
+              url: '/pages/setting/setting',
+            })
+          }, 2000);
+        }
+      })
+      return false;
+    }
+    return true;
   },
   /**
    * 生命周期函数--监听页面加载
@@ -49,7 +72,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      
   },
 
   /**

@@ -41,7 +41,7 @@ Page({
             console.log('新用户');
             db.collection('user').add({
               data: {
-                type: 'wx'
+                type: 0
               }
             }).then(res => {
               console.log(res)
@@ -91,7 +91,11 @@ Page({
       }
     })
   },
-
+  gosetting(){
+    wx.navigateTo({
+      url: '/pages/setting/setting',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

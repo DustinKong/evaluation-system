@@ -19,10 +19,15 @@
   <image wx:else src="{{userInfo.avatarUrl}}" class="round pic"></image>
   <view class="text-xxl padding text-white text-bold">{{userInfo.nickName}}</view>
 </view>
+
 <view class="flex two" >
   <view class="align2 padding" bindtap="gohelp">
     <image src="/images/question.png" class="logo"></image>
-    <view class="text-xl text-bold padding">帮助中心</view>
+    <view class="text-xl text-bold padding">帮助</view>
+  </view>
+  <view class="align2 padding" bindtap="gosetting">
+    <image src="/images/setting.png" class="logo"></image>
+    <view class="text-xl text-bold padding">设置</view>
   </view>
   <view class="align2 padding" bindtap="goabout">
     <image src="/images/about.png" class="logo"></image>

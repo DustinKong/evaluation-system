@@ -16,7 +16,8 @@
     "pages/sumRecordResult/index",
     "pages/my_about/my_about",
     "pages/question/question",
-    "pages/report/report"
+    "pages/report/report",
+    "pages/setting/setting"
   ],
   "window": {
     "navigationStyle": "custom",

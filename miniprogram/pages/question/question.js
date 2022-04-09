@@ -5,9 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    showList:[{
+      title:'建设规划（百分制)'
+    },
+    
+  ]
   },
-
+  // bindblurAnswerOfSAQ: function (input) {
+  //   var tempIndex = input.currentTarget.dataset.id;
+  //   var tempArray = this.data.answers;
+  //   let answer = {
+  //     data: "",
+  //     queId: -1,
+  //   };
+  //   answer.data = input.detail.value;
+  //   answer.queId = this.data.xsquestions[tempIndex].queId;
+  //   tempArray[tempIndex] = answer;
+  //   this.setData({
+  //     answers: tempArray,
+  //   });
+  // },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -64,6 +64,20 @@
           "name": "我的",
           "pathName": "pages/my/my",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的设置",
+          "pathName": "pages/setting/setting",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "问卷",
+          "pathName": "pages/question/question",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

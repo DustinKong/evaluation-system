@@ -2,3 +2,56 @@
   <view slot="backText">返回</view>
   <view slot="content">问卷测评</view>
 </cu-custom>
+
+<view class="bg-grey padding text-center">关于实验室综合测评的问卷——实验室人员版
+</view>
+
+<view class="text-center padding text-bold">一、规划与管理 </view>
+<view class='SAQ'>
+  <view class='SAQTitle padding-xs'>
+    <view class='SAQQ'>Q1:</view>
+    <text class='SAQDiscription' data-id='0'> 建设规划（百分制）</text>
+  </view>
+  <input class="SAQAnswer" ></input>
+  <!-- <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 建设规划（百分制）</view> -->
+</view>
+<view class='SAQ'>
+  <view class='SAQTitle padding-xs'>
+    <view class='SAQQ'>Q2:</view>
+    <text class='SAQDiscription' data-id='1'> 制度建设（百分制）</text>
+  </view>
+  <input class="SAQAnswer" ></input>
+  <!-- <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 建设规划（百分制）</view> -->
+</view>
+<view class='SAQ'>
+  <view class='SAQTitle padding-xs'>
+    <view class='SAQQ'>Q3:</view>
+    <text class='SAQDiscription' data-id='2'>  管理机构（百分制）</text>
+  </view>
+  <input class="SAQAnswer" ></input>
+  <!-- <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 建设规划（百分制）</view> -->
+</view>
+<view class='SAQ'>
+  <view class='SAQTitle padding-xs'>
+    <view class='SAQQ'>Q4:</view>
+    <text class='SAQDiscription' data-id='3'>管理手段（百分制）</text>
+  </view>
+  <input class="SAQAnswer" ></input>
+  <!-- <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 建设规划（百分制）</view> -->
+</view>
+<view class='SAQ'>
+  <view class='SAQTitle padding-xs'>
+    <view class='SAQQ'>Q5:</view>
+    <text class='SAQDiscription' data-id='4'> 科研氛围（百分制）</text>
+  </view>
+  <input class="SAQAnswer" ></input>
+  <!-- <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 建设规划（百分制）</view> -->
+</view>
+<view class='SAQ'>
+  <view class='SAQTitle padding-xs'>
+    <view class='SAQQ'>Q6:</view>
+    <text class='SAQDiscription' data-id='5'>基本信息的收集整理（百分制）</text>
+  </view>
+  <input class="SAQAnswer" ></input>
+  <!-- <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 建设规划（百分制）</view> -->
+</view>
