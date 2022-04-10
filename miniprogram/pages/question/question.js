@@ -1,16 +1,69 @@
 // pages/question/question.js
+const db = wx.cloud.database();
+const _ = db.command;
 Page({
 
   /**
    * 页面的初始数据
    */
+
   data: {
-    showList:[{
-      title:'建设规划（百分制)'
-    },
-    
-  ]
+    answer: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+    nickName: '',
+    showList: [{
+      title: '建设规划（百分制)'
+    }, ]
   },
+  getinput(e) {
+    let id = e.target.dataset.id;
+    this.setData({
+      ["answer[" + id + "]"]: e.detail.value
+    })
+  },
+  commit() {
+    let that = this;
+    // db.collection('data').where({
+    //   labId: "0"
+    // }).update({
+    //   data: {
+    //     type0: _.push(that.data.answer)
+    //   },
+    //   success: function (res) {
+    //     console.log(res)
+    //   }
+    // })
+    let answer = that.data.answer;
+    for (let i = 0; i < 33; i++) {
+      answer[i] = Math.floor(Math.random() * 50 + 50)
+    }
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'addData',
+      // 传给云函数的参数
+      data: {
+        id: "1",
+        name: that.data.nickName,
+        answer: answer,
+      },
+      success: function (res) {
+        console.log(res);
+        // wx.showToast({ 
+        //   title: '提交成功',
+        //    duration: 2000,
+        //    success: function() { 
+        //     setTimeout(function() { 
+        //       wx.navigateBack({
+        //         delta: 1,
+        //       })
+        //     }, 2000); 
+        //   }
+        // })
+      },
+      fail: console.error
+    })
+  },
+
   // bindblurAnswerOfSAQ: function (input) {
   //   var tempIndex = input.currentTarget.dataset.id;
   //   var tempArray = this.data.answers;
@@ -29,7 +82,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      nickName: wx.getStorageSync('userInfo').nickName
+    })
   },
 
   /**

@@ -1,4 +1,6 @@
 // pages/report/report.js
+const db = wx.cloud.database();
+const _ = db.command;
 Page({
 
   /**
@@ -12,9 +14,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.analyze();
   },
-
+  analyze(){
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'analyze',
+      // 传给云函数的参数
+      data: {
+        labId: "1",
+      },
+      success: function (res) {
+        console.log(res);
+        // wx.showToast({ 
+        //   title: '提交成功',
+        //    duration: 2000,
+        //    success: function() { 
+        //     setTimeout(function() { 
+        //       wx.navigateBack({
+        //         delta: 1,
+        //       })
+        //     }, 2000); 
+        //   }
+        // })
+      },
+      fail: console.error
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
