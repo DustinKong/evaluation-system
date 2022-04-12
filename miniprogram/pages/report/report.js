@@ -21,9 +21,11 @@ Page({
 
   reReport(){
     console.log('reReport')
+    this.analyze1();
     this.analyze2();
   },
-  analyze(){
+  //生成33*1
+  analyze1(){
     console.log('analyze1')
     let that=this
     wx.cloud.callFunction({
@@ -50,6 +52,7 @@ Page({
       fail: console.error
     })
   },
+  // 生成4*1
   analyze2(){
     console.log('analyze2')
     let that=this

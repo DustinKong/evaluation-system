@@ -65,10 +65,12 @@ exports.main = async (event, context) => {
       arrE[i] = (1 - arrE[i]) / tmpSum;
     }
     console.log(arrE);
-    db.collection('result').add({
+    db.collection('result').where({
+      labId: event.labId,
+    }).update({
       data:{
-        labId:event.labId,
-        data:arrE
+        labId: event.labId,
+        data: arrE
       }
     })
     return {

@@ -65,15 +65,36 @@ exports.main = async (event, context) => {
       arrEnd[i] = 1 - (arrEnd[i] / 33);
     }
     console.log(arrEnd);
-    db.collection('fitResult').add({
-      data:{
-        labId:event.labId,
-        data:arrEnd
+    let _max = arrEnd[0],
+      index = 0;
+    for (let i = 1; i < 4; i++) {
+      if (arrEnd[i] > _max) {
+        _max = arrEnd[i];
+        index = i;
+      }
+    }
+    let level = "";
+    if (index == 0) {
+      level = "不合格"
+    } else if (index == 1) {
+      level = "合格"
+    } else if (index == 2) {
+      level = "良好"
+    } else {
+      level = "优秀"
+    }
+    db.collection('fitResult').where({
+      labId: event.labId,
+    }).update({
+      data: {
+        labId: event.labId,
+        data: arrEnd,
+        level: level
       }
     })
     return {
       msg: "ok",
-      data:arrEnd
+      data: arrEnd
     };
   })
 }
