@@ -1,10 +1,7 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">分析报告</view>
+  <view slot="content">实验室综合评估</view>
 </cu-custom>
-
-<view class="bg-grey padding text-center">跨学科实验室{{id}}
-</view>
 
 <button class="cu-btn bg-red margin-tb-sm lg" bindtap="reReport">重新评估</button>
 

@@ -6,6 +6,7 @@ cloud.init({
 });
 const db = cloud.database();
 const _ = db.command;
+
 // 云函数入口函数
 exports.main = async (event, context) => {
   console.log(event.labId)
@@ -64,7 +65,12 @@ exports.main = async (event, context) => {
       arrE[i] = (1 - arrE[i]) / tmpSum;
     }
     console.log(arrE);
-    
+    db.collection('result').add({
+      data:{
+        labId:event.labId,
+        data:arrE
+      }
+    })
     return {
       msg: "ok",
       data: arrE

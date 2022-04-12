@@ -42,7 +42,7 @@ Page({
       name: 'addData',
       // 传给云函数的参数
       data: {
-        id: "1",
+        id: that.data.labId,
         name: that.data.nickName,
         answer: answer,
       },
@@ -83,6 +83,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
+      labId:options.id,
       nickName: wx.getStorageSync('userInfo').nickName
     })
   },

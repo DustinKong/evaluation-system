@@ -17,7 +17,9 @@
     "pages/my_about/my_about",
     "pages/question/question",
     "pages/report/report",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/chooseLab/chooseLab",
+    "pages/sum/sum"
   ],
   "window": {
     "navigationStyle": "custom",

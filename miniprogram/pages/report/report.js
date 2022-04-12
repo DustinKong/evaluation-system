@@ -14,15 +14,51 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.analyze();
+    this.setData({
+      id:options.id
+    })
+  },
+
+  reReport(){
+    console.log('reReport')
+    this.analyze2();
   },
   analyze(){
+    console.log('analyze1')
+    let that=this
     wx.cloud.callFunction({
       // 云函数名称
       name: 'analyze',
       // 传给云函数的参数
       data: {
-        labId: "1",
+        labId: that.data.id,
+      },
+      success: function (res) {
+        console.log(res);
+        // wx.showToast({ 
+        //   title: '提交成功',
+        //    duration: 2000,
+        //    success: function() { 
+        //     setTimeout(function() { 
+        //       wx.navigateBack({
+        //         delta: 1,
+        //       })
+        //     }, 2000); 
+        //   }
+        // })
+      },
+      fail: console.error
+    })
+  },
+  analyze2(){
+    console.log('analyze2')
+    let that=this
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'analyzeSum',
+      // 传给云函数的参数
+      data: {
+        labId: that.data.id,
       },
       success: function (res) {
         console.log(res);

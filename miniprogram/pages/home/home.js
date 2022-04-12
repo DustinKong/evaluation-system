@@ -25,14 +25,14 @@ Page({
     if(!this.judge())
       return;
     wx.navigateTo({
-      url: '/pages/question/question',
+      url: '/pages/chooseLab/chooseLab?type=1',
     })
   },
   go2() {
     if(!this.judge())
     return;
     wx.navigateTo({
-      url: '/pages/report/report',
+      url: '/pages/chooseLab/chooseLab?type=2',
     })
   },
   judge() {
