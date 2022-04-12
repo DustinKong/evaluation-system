@@ -8,3 +8,6 @@
 
 <button class="cu-btn bg-red margin-tb-sm lg" bindtap="reReport">重新评估</button>
 
+<view class="container">
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view>

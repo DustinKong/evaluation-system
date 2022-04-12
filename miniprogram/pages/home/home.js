@@ -7,13 +7,13 @@ Page({
   data: {
     swiperList: [{
       'id': 0,
-      'url': '/images/swiper1.png'
+      'url': 'https://636c-cloud1-9gw00z6jf0901e86-1310404954.tcb.qcloud.la/swiper3.png?sign=f95a591353811bca1f7acaf2ec9c7c3b&t=1649771266'
     }, {
       'id': 1,
-      'url': '/images/swiper2.png'
+      'url': 'https://636c-cloud1-9gw00z6jf0901e86-1310404954.tcb.qcloud.la/swiper2.png?sign=3c337f6282ed67a45b46a26433ebe8fb&t=1649771312'
     }, {
       'id': 2,
-      'url': '/images/swiper3.png'
+      'url': 'https://636c-cloud1-9gw00z6jf0901e86-1310404954.tcb.qcloud.la/swiper1.png?sign=301e39e9ea0fde675ed3ebc12642387a&t=1649771324'
     }]
   },
   go() {

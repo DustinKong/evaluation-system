@@ -78,6 +78,13 @@
           "name": "问卷",
           "pathName": "pages/question/question",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "报告",
+          "pathName": "pages/report/report",
+          "query": "id=1",
           "scene": null,
           "launchMode": "default"
         }
