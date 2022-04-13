@@ -4,10 +4,10 @@ const cloud = require('wx-server-sdk')
 cloud.init()
 const db = cloud.database();
 const _ = db.command;
-
+var labId;
 // 云函数入口函数
 exports.main = async (event, context) => {
-
+  labId=event.labId;
   return await db.collection('data').where({
     labId: event.labId
   }).get().then(res => {
@@ -83,13 +83,56 @@ exports.main = async (event, context) => {
     } else {
       level = "优秀"
     }
+    var date = new Date();
+
     db.collection('fitResult').where({
-      labId: event.labId,
-    }).update({
-      data: {
-        labId: event.labId,
-        data: arrEnd,
-        level: level
+      labId: labId,
+    }).get().then(res => {
+      // res.data 包含该记录的数据
+      console.log(res.data)
+      if (!res.data.length) {
+        console.log("new lab");
+        db.collection('fitResult').add({
+          data: {
+            labId: labId,
+            data: arrEnd,
+            level: level,
+            date:date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+          }
+        })
+      } else {
+        console.log("已有")
+        db.collection('fitResult').where({
+          labId: labId,
+        }).update({
+          data: {
+            labId: labId,
+            data: arrEnd,
+            level: level,
+            date:date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+          }
+        })
+      }
+    })
+
+
+    db.collection('fitResult').where({
+      labId: labId,
+    }).get({
+      success: function (res) {
+        // res.data 包含该记录的数据
+        console.log(res.data)
+        if (!res.data) {
+          console.log("new lab");
+          db.collection('fitResult').add({
+            data: {
+              labId: labId,
+              data: arrEnd,
+              level: level,
+              date:date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+            }
+          })
+        }
       }
     })
     return {

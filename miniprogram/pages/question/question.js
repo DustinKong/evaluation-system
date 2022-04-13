@@ -35,7 +35,7 @@ Page({
     // })
     let answer = that.data.answer;
     for (let i = 0; i < 33; i++) {
-      answer[i] = Math.floor(Math.random() * 50 + 50)
+      answer[i] = Math.floor(Math.random() * 70 + 30)
     }
     wx.cloud.callFunction({
       // 云函数名称

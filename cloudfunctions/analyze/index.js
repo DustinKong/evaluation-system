@@ -6,10 +6,11 @@ cloud.init({
 });
 const db = cloud.database();
 const _ = db.command;
-
+var labId;
 // 云函数入口函数
 exports.main = async (event, context) => {
   console.log(event.labId)
+  labId = event.labId;
   return await db.collection('data').where({
     labId: event.labId
   }).get().then(res => {
@@ -65,14 +66,119 @@ exports.main = async (event, context) => {
       arrE[i] = (1 - arrE[i]) / tmpSum;
     }
     console.log(arrE);
+    // 计算一级指标
+    let arrSum = new Array(8);
+    let sum = 0;
+    for (let i = 0; i < 6; i++) {
+      sum += arrE[i];
+    }
+    arrSum[0] = sum;
+    sum = 0;
+    for (let i = 6; i < 10; i++) {
+      sum += arrE[i];
+    }
+    arrSum[1] = sum;
+    sum = 0;
+    for (let i = 10; i < 15; i++) {
+      sum += arrE[i];
+    }
+    arrSum[2] = sum;
+    sum = 0;
+    for (let i = 15; i < 20; i++) {
+      sum += arrE[i];
+    }
+    arrSum[3] = sum;
+    sum = 0;
+    for (let i = 20; i < 24; i++) {
+      sum += arrE[i];
+    }
+    arrSum[4] = sum;
+    sum = 0;
+    for (let i = 24; i < 27; i++) {
+      sum += arrE[i];
+    }
+    arrSum[5] = sum;
+    sum = 0;
+    for (let i = 27; i < 31; i++) {
+      sum += arrE[i];
+    }
+    arrSum[6] = sum;
+    sum = 0;
+    for (let i = 31; i < 33; i++) {
+      sum += arrE[i];
+    }
+    arrSum[7] = sum;
+    console.log("event");
+    console.log(labId);
+    var date = new Date();
+
     db.collection('result').where({
-      labId: event.labId,
-    }).update({
-      data:{
-        labId: event.labId,
-        data: arrE
+      labId: labId,
+    }).get().then(res => {
+      // res.data 包含该记录的数据
+      console.log(res.data)
+      if (!res.data.length) {
+        console.log("new lab");
+        db.collection('result').add({
+          data: {
+            labId: labId,
+            data: arrE,
+            arrSum: arrSum,
+            date: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+          }
+        })
+      } else {
+        console.log("已有")
+        db.collection('result').where({
+          labId: labId,
+        }).update({
+          data: {
+            labId: labId,
+            data: arrE,
+            arrSum: arrSum,
+            date: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+          }
+        })
       }
     })
+
+
+
+    // ({
+    //   success: function (res) {
+    //     console.log("test");
+    //     // res.data 包含该记录的数据
+    //     console.log(res.data)
+    //     if (!res.data.length) {
+    //       console.log("new lab");
+    //       db.collection('result').add({
+    //         data:{
+    //           labId: labId,
+    //           data: arrE,
+    //           arrSum:arrSum,
+    //           date:date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+    //         }
+    //       })
+    //     }
+    //     else{
+    //       console.log("已有")
+    //       db.collection('result').where({
+    //         labId: labId,
+    //       }).update({
+    //         data:{
+    //           labId: labId,
+    //           data: arrE,
+    //           arrSum:arrSum,
+    //           date:date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+    //         }
+    //       })
+    //     }
+    //   }
+    // })
+
+
+
+
     return {
       msg: "ok",
       data: arrE
