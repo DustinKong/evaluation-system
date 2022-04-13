@@ -7,7 +7,7 @@ const _ = db.command;
 var labId;
 // 云函数入口函数
 exports.main = async (event, context) => {
-  labId=event.labId;
+  labId = event.labId;
   return await db.collection('data').where({
     labId: event.labId
   }).get().then(res => {
@@ -97,7 +97,7 @@ exports.main = async (event, context) => {
             labId: labId,
             data: arrEnd,
             level: level,
-            date:date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+            date: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
           }
         })
       } else {
@@ -109,7 +109,7 @@ exports.main = async (event, context) => {
             labId: labId,
             data: arrEnd,
             level: level,
-            date:date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+            date: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
           }
         })
       }
@@ -129,7 +129,7 @@ exports.main = async (event, context) => {
               labId: labId,
               data: arrEnd,
               level: level,
-              date:date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+              date: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
             }
           })
         }
