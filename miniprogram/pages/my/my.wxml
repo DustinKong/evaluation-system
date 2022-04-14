@@ -6,7 +6,7 @@
 <view wx:if="{{state==0}}" class="flex bg-grey align" style="height: 250rpx;">
   <image wx:if="{{!userInfo}}" src="/images/pic.png" class="round pic"></image>
   <image wx:else src="{{userInfo.avatarUrl}}" class="round pic"></image>
-  <view wx:if="{{openId==''}}" class="button" bindtap="getOpenId">获取OpenId</view>
+  <view wx:if="{{openId==''}}" class="button" bindtap="getOpenId">微信登陆</view>
 </view>
 
 <view wx:if="{{state==1}}" class="flex bg-grey align" style="height: 250rpx;">

@@ -35,7 +35,25 @@ Page({
       url: '/pages/chooseLab/chooseLab?type=2',
     })
   },
+
   judge() {
+    let info=wx.getStorageSync('userInfo');
+    if ( info == null) {
+      wx.showToast({
+        title: '请先登陆',
+        icon: 'none',
+        duration: 1000,
+        success: function () {
+          setTimeout(function () {
+            wx.switchTab({
+              url: '/pages/my/my',
+            })
+          }, 1000);
+        }
+      })
+      return false;
+    }
+
     let type = wx.getStorageSync('type')
     if (type == 0 || type == null) {
       wx.showToast({

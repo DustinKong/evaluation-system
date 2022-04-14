@@ -7,7 +7,7 @@ var chart3 = null
 
 Page({
   data: {
-    fit:[],
+    fit: [],
     ec1: {
       onInit: function (canvas, width, height) {
         chart1 = echarts.init(canvas, null, {
@@ -18,13 +18,11 @@ Page({
         return chart1;
       }
     },
-    constants: [
-      {
+    constants: [{
         "id": "1",
         "ids": "id1",
         "name": "序言",
-        "category": [
-          {
+        "category": [{
             "category_id": 1,
             "type": 1,
             "category_name": "该报告收集所有参评专家与实验室内部人员填写的数据对参评实验室进行评估，分析报告正文共分四章，第一章分析实验室总体水平以及各指标间均衡性；第二章分别分析八个一级指标以及下设二级指标和部分重要数据项；第三章通过比较各个实验室评估结果和整体水平，分析该实验室建设状况；第四章对报告内容进行简单总结。在查看本报告的过程中，应注意以下几点：",
@@ -118,7 +116,7 @@ Page({
           {
             "category_id": 16,
             "type": 4,
-            "head": ["指标名称", "初始值","标准化值"],
+            "head": ["指标名称", "初始值", "标准化值"],
             "listData": "",
           },
           {
@@ -139,16 +137,57 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that=this
+    let that = this
     db.collection("fitResult").get({
-      success:function(res){
+      success: function (res) {
         console.log(res);
-        let tmp=res.data;
-        for(let i of tmp){
-          i.alpha=String.fromCharCode('A'.charCodeAt(0) + parseInt(i.labId - 1))
+        let tmp = res.data;
+        for (let i of tmp) {
+          i.alpha = String.fromCharCode('A'.charCodeAt(0) + parseInt(i.labId - 1))
         }
         that.setData({
-          fit:res.data
+          fit: res.data
+        })
+        let ser = [];
+        let name=[];
+        for (let i of tmp) {
+          let t = {};
+          t.name = i.alpha;
+          t.type = "line";
+          t.smooth = true;
+          t.data = i.data
+          ser.push(t);
+          name.push(i.alpha)
+        }
+        console.log(ser)
+        chart1.setOption({
+          title: {
+            text: "实验室与各等级贴合度",
+            textStyle: {
+              color: '#333',
+              fontWeight: 'bold',
+              fontSize: 14,
+            }
+          },
+          tooltip: {
+            trigger: 'axis',
+            confine: true, // 加入这一句话
+          },
+          legend: {
+            data: name,
+            right: 20,
+            top: 20
+          },
+
+          xAxis: {
+            type: 'category',
+            data: ['不合格', '合格', '良好', '优秀'],
+          
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: ser
         })
       }
     })

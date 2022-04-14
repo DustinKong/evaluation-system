@@ -9,11 +9,13 @@
   <view>实验室类别</view>
   <view>等级</view>
 </view>
+
 <view class="bg-blue flex contents padding text-black text-xl" wx:for="{{fit}}">
   <view>跨学科学术组织{{item.alpha}}</view>
   <view>{{item.level}}</view>
 </view>
 
-<view class="container">
-    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
-  </view>
+<view class="ec-container margin-top">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec1 }}"></ec-canvas>
+</view>
+
