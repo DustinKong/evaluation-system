@@ -3,21 +3,25 @@ ec-canvas {
   width: 100%;
   height: 100%;
 }
-.container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
+.title{
+  justify-content: space-around;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.contents{
+  background-color: #E6F3F9;
+  
+  justify-content: space-around;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.ec-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-} 
-.picker-pos{
-  margin-top: -130rpx;
-  margin-left: 150rpx;
-  color: blueviolet
-}
+  height: 580rpx;
+  width: 100%;
+  }

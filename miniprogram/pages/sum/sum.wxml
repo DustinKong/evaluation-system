@@ -3,7 +3,16 @@
   <view slot="content">实验室综合评估</view>
 </cu-custom>
 
-<button class="cu-btn bg-red margin-tb-sm lg" bindtap="reReport">重新评估</button>
+<!-- <button class="cu-btn bg-red margin-tb-sm lg" bindtap="reReport">重新评估</button> -->
+
+<view class="bg-blue flex padding title">
+  <view>实验室类别</view>
+  <view>等级</view>
+</view>
+<view class="bg-blue flex contents padding text-black text-xl" wx:for="{{fit}}">
+  <view>跨学科学术组织{{item.alpha}}</view>
+  <view>{{item.level}}</view>
+</view>
 
 <view class="container">
     <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>

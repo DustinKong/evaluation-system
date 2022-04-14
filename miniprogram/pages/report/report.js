@@ -198,11 +198,8 @@ Page({
       that.onLoad({
         "id": that.data.id
       });
-    }, 2000); 
-    setTimeout(function() { 
       wx.hideLoading();
     }, 2000); 
-
   },
   //生成33*1
   analyze1() {

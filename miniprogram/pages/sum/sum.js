@@ -1,34 +1,22 @@
+const db = wx.cloud.database();
 import * as echarts from '../../ec-canvas/echarts' // 这个是自己实际的目录
-function initChart(canvas, width, height, dpr) { // 这部分是固定的不需要 是通用的
-  const chart = echarts.init(canvas, null, {
-    width: width,
-    height: height
-  });
-  canvas.setChart(chart);
-  // 这是 唯一需要更改的，可根据实际情况api更改图标
-  // 我这边测试的是一个 普通的折线图,案例网址:
-  var option = {
-    xAxis: {
-        type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [{
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
-        type: 'line'
-    }]
-};
 
-  chart.setOption(option);
-  return chart;
-}
+var chart1 = null
+var chart2 = null
+var chart3 = null
 
 Page({
   data: {
-    ec: {
-      onInit: initChart
+    fit:[],
+    ec1: {
+      onInit: function (canvas, width, height) {
+        chart1 = echarts.init(canvas, null, {
+          width: width,
+          height: height
+        });
+        canvas.setChart(chart1);
+        return chart1;
+      }
     },
     constants: [
       {
@@ -151,7 +139,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that=this
+    db.collection("fitResult").get({
+      success:function(res){
+        console.log(res);
+        let tmp=res.data;
+        for(let i of tmp){
+          i.alpha=String.fromCharCode('A'.charCodeAt(0) + parseInt(i.labId - 1))
+        }
+        that.setData({
+          fit:res.data
+        })
+      }
+    })
   },
 
   /**
