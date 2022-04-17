@@ -67,7 +67,7 @@
     <text class='SAQDiscription'> 跨学科学术交流（百分制）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='6' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室实际规划，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室跨学科学术交流情况，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -75,7 +75,7 @@
     <text class='SAQDiscription' > 跨学科特色（百分制）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='7' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室制度实施情况，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室跨学科特色实施情况，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -83,7 +83,7 @@
     <text class='SAQDiscription'> 理论实践结合度（%）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='8' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">针对管理层打分，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">针对理论实践情况，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -91,7 +91,7 @@
     <text class='SAQDiscription'> 综合教学指导（百分制）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='9' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照实验室内外部管理情况，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照实验室综合教学指导情况，打分范围：0-100</view>
 </view>
 
 <!-- 5 15 -->
@@ -102,7 +102,7 @@
     <text class='SAQDiscription'> 人员数量（人）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='10' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室实际规划，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室人员数量，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -110,7 +110,7 @@
     <text class='SAQDiscription' > 职称结构（%）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='11' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室制度实施情况，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室职称结构情况，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -118,7 +118,7 @@
     <text class='SAQDiscription'>学缘结构（%）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='12' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">针对管理层打分，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">针对学缘结构打分，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -126,7 +126,7 @@
     <text class='SAQDiscription'> 素质结构（%）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='13' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照实验室内外部管理情况，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照实验室素质结构情况，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -134,7 +134,7 @@
     <text class='SAQDiscription'>研究分组（个）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='14' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照该实验室科研氛围信息，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照该实验室研究分组，打分范围：0-100</view>
 </view>
 
 <!-- 5 20 -->
@@ -145,7 +145,7 @@
     <text class='SAQDiscription'>跨学科实践能力（百分制）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='15' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室实际规划，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室跨学科实践能力，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -153,7 +153,7 @@
     <text class='SAQDiscription' > 跨学科融合能力（百分制）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='16' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室制度实施情况，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室跨学科融合能力情况，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -161,7 +161,7 @@
     <text class='SAQDiscription'>跨学科科研能力 （百分制）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='17' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">针对管理层打分，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">针对跨学科科研能力打分，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -169,7 +169,7 @@
     <text class='SAQDiscription'> 团队协作能力（百分制）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='18' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照实验室内外部管理情况，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照实验室团队协作能力，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -177,7 +177,7 @@
     <text class='SAQDiscription'>研究人员平均考核（百分制）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='19' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照该实验室科研氛围信息，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 参照该实验室研究人员平均考核，打分范围：0-100</view>
 </view>
 
 <!-- 4 24 -->
@@ -188,7 +188,7 @@
     <text class='SAQDiscription'>成果质量（百分制）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='20' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室实际规划，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室成果质量，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -196,7 +196,7 @@
     <text class='SAQDiscription' > 成果交叉程度（%）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='21' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室制度实施情况，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室成果交叉程度情况，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -223,7 +223,7 @@
     <text class='SAQDiscription'>社会影响力（百分制）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='24' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室实际规划，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室社会影响力，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -231,7 +231,7 @@
     <text class='SAQDiscription' >  学术成果实际应用性（百分制）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='25' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室制度实施情况，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室学术成果实际应用性情况，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -239,7 +239,7 @@
     <text class='SAQDiscription'>学术界影响力（百分制）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='26' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">软件著作15分 实用新型专利15分 外观设计专利8分 </view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">根据实验室学术界影响力情况，打分范围：0-100</view>
 </view>
 
 <!-- 4 31 -->
@@ -250,7 +250,7 @@
     <text class='SAQDiscription'>参与学科竞赛人次（人）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='27' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室实际规划，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室参与学科竞赛人次，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -258,7 +258,7 @@
     <text class='SAQDiscription' >学科竞赛级别（百分制）</text>
   </view>
   <input class="SAQAnswer" bindinput="getinput" data-id='28' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室制度实施情况，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px"> 根据实验室学科竞赛级别情况，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -266,7 +266,7 @@
     <text class='SAQDiscription'>参与学科竞赛数量（个）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='29' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">针对管理层打分，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">针对参与学科竞赛数量，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>
@@ -285,7 +285,7 @@
     <text class='SAQDiscription'>跨学科创新性（百分制）</text>
   </view>
   <input class="SAQAnswer"  bindinput="getinput" data-id='31' ></input>
-  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室实际规划，打分范围：0-100</view>
+  <view class='SAQQ padding-xs' style="color: gray; font-size:10px">参考实验室跨学科创新性，打分范围：0-100</view>
 </view>
 <view class='SAQ'>
   <view class='SAQTitle padding-xs'>

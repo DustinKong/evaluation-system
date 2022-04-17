@@ -4,7 +4,10 @@
 </cu-custom>
 
 <!-- <button class="cu-btn bg-red margin-tb-sm lg" bindtap="reReport">重新评估</button> -->
-
+<text class="text-bold text-xxl margin-top margin-left">第一部分、跨学科组织总体情况</text>
+<text class="margin-left margin-right margin-bottom-sm text-xl">
+跨学科学术组织的总体水平由规划与管理、学科联合培养、组织成员、人才培养、科研成果、学术影响力、学科竞赛、创新水平这八个方面计算出等级贴进度来进行比较跨学科的横向等级水平。
+</text>
 <view class="bg-blue flex padding title">
   <view>实验室类别</view>
   <view>等级</view>
@@ -14,7 +17,7 @@
   <view>跨学科学术组织{{item.alpha}}</view>
   <view>{{item.level}}</view>
 </view>
-
+<text class="margin text-xl">如上，标准化的数值能够将这几个学术组织的贴进度放入一个折线图中进行比较，可以更加直观地看出学术组织与某个等级的贴近程度</text>
 <view class="ec-container margin-top">
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec1 }}"></ec-canvas>
 </view>

@@ -32,8 +32,9 @@ Page({
     if(!this.judge())
     return;
     wx.navigateTo({
-      url: '/pages/chooseLab/chooseLab?type=2',
+      url: '/pages/pre/pre',
     })
+
   },
 
   judge() {

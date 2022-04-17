@@ -1,0 +1,4 @@
+/* pages/pre/pre.wxss */
+.size{
+  font-size: 14px;
+}

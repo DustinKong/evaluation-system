@@ -4,6 +4,41 @@ import * as echarts from '../../ec-canvas/echarts' // 这个是自己实际的�
 var chart1 = null
 var chart2 = null
 var chart3 = null
+const explains = [
+  "建设规划（百分制）",
+  "制度建设（百分制）",
+  "管理机构（百分制）",
+  "管理手段（百分制）",
+  "科研氛围（百分制）",
+  "基本信息的收集整理（百分制）",
+  "跨学科学术交流（百分制）",
+  "跨学科特色（百分制）",
+  "理论实践结合度（%）",
+  "综合教学指导（百分制）",
+  "人员数量（人）",
+  "职称结构（%）",
+  "学缘结构（%）",
+  "素质结构（%）",
+  "研究分组（个）",
+  "跨学科实践能力（百分制）",
+  "跨学科融合能力（百分制）",
+  "跨学科科研能力 （百分制） ",
+  "团队协作能力（百分制）",
+  "研究人员平均考核（百分制）",
+  "成果质量（百分制）",
+  "成果交叉程度（%）",
+  "专利积分（百分制）",
+  "科研论文积分（百分制）",
+  "社会影响力（百分制）",
+  "学术成果实际应用性（百分制）",
+  "学术界影响力（百分制）",
+  "参与学科竞赛人次（人）",
+  "学科竞赛级别（百分制）",
+  "参与学科竞赛数量（个）",
+  "学科竞赛成果（百分制）",
+  "跨学科创新性（百分制）",
+  "其他创新水平（个）"
+]
 Page({
 
   /**
@@ -48,6 +83,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     let that = this;
     let alpha = String.fromCharCode('A'.charCodeAt(0) + parseInt(options.id - 1))
     this.setData({
@@ -61,12 +99,23 @@ Page({
       success: function (res) {
         // res.data 包含该记录的数据
         console.log(res);
+        let tmpData = res.data[0];
         that.setData({
           result: res.data[0]
         })
+        let lastArr=[]
+        for(let i=0;i<33;i++){
+          let xx={};
+          xx.name=explains[i];
+          xx.data=(res.data[0].data[i]*10).toFixed(4);;
+          lastArr.push(xx);
+        }
+        that.setData({
+          lastArr:lastArr
+        })
         chart2.setOption({
           title: {
-            text: "一级指标权重值",
+            text: "2、一级指标权重值",
             textStyle: {
               color: '#333',
               fontWeight: 'bold',
@@ -107,7 +156,7 @@ Page({
         console.log(tmp)
         chart3.setOption({
           title: {
-            text: "学术组织综合得分",
+            text: "3、学术组织综合得分",
             textStyle: {
               color: '#333',
               fontWeight: 'bold',
@@ -139,6 +188,7 @@ Page({
             smooth: true
           }]
         })
+        wx.hideLoading()
       }
     })
     db.collection('fitResult').where({
@@ -152,7 +202,7 @@ Page({
         })
         chart1.setOption({
           title: {
-            text: "学术组织与各等圾贴近度",
+            text: "1、学术组织与各等圾贴近度",
             textStyle: {
               color: '#333',
               fontWeight: 'bold',
@@ -186,20 +236,19 @@ Page({
   },
 
   reReport() {
-    wx.showLoading({ // 显示加载中loading效果 
-      title: "评估中",
-      mask: true //开启蒙版遮罩
-    });
-    let that=this
+    wx.showLoading({
+      title: '加载中',
+    })
+    let that = this
     console.log('reReport')
     this.analyze1();
-    this.analyze2();
-    setTimeout(function() { 
+    //this.analyze2();
+    setTimeout(function () {
       that.onLoad({
         "id": that.data.id
       });
       wx.hideLoading();
-    }, 2000); 
+    }, 2000);
   },
   //生成33*1
   analyze1() {

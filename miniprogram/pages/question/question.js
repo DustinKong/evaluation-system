@@ -1,6 +1,7 @@
 // pages/question/question.js
 const db = wx.cloud.database();
 const _ = db.command;
+const times=500
 Page({
 
   /**
@@ -33,35 +34,42 @@ Page({
     //     console.log(res)
     //   }
     // })
-    let answer = that.data.answer;
-    for (let i = 0; i < 33; i++) {
-      answer[i] = Math.floor(Math.random() * 70 + 30)
+
+    for(let i=0;i<times;i++){
+      setTimeout(() => {
+        let answer = that.data.answer;
+        for (let i = 0; i < 33; i++) {
+          answer[i] = Math.floor(Math.random() * 40 + 35)
+        }
+        wx.cloud.callFunction({
+          // 云函数名称
+          name: 'addData',
+          // 传给云函数的参数
+          data: {
+            id: that.data.labId,
+            name: that.data.nickName,
+            answer: answer,
+          },
+          success: function (res) {
+            // console.log(res);
+            // wx.showToast({ 
+            //   title: '提交成功',
+            //    duration: 2000,
+            //    success: function() { 
+            //     setTimeout(function() { 
+            //       wx.navigateBack({
+            //         delta: 1,
+            //       })
+            //     }, 2000); 
+            //   }
+            // })
+          },
+          fail: console.error
+        })
+      }, 120);
     }
-    wx.cloud.callFunction({
-      // 云函数名称
-      name: 'addData',
-      // 传给云函数的参数
-      data: {
-        id: that.data.labId,
-        name: that.data.nickName,
-        answer: answer,
-      },
-      success: function (res) {
-        console.log(res);
-        // wx.showToast({ 
-        //   title: '提交成功',
-        //    duration: 2000,
-        //    success: function() { 
-        //     setTimeout(function() { 
-        //       wx.navigateBack({
-        //         delta: 1,
-        //       })
-        //     }, 2000); 
-        //   }
-        // })
-      },
-      fail: console.error
-    })
+
+
   },
 
   // bindblurAnswerOfSAQ: function (input) {

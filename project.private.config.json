@@ -85,6 +85,13 @@
           "name": "报告",
           "pathName": "pages/report/report",
           "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/sum/sum",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

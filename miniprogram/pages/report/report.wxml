@@ -7,7 +7,11 @@
 </view>
 
 <button class="cu-btn bg-red margin-tb-sm lg" bindtap="reReport">重新评估</button>
-
+<text class="text-bold text-xxl margin-top margin-left">第二部分、跨学科组织具体分析</text>
+<text class="margin-left margin-right margin-bottom-sm text-xl">
+  在该分析报告中，此时评估设计了规划与管理、学科联合培养、组织成员、人才培养、科研成果、学术影响力、学科竞赛、创新水平这八个方面，同时共有以下34个二级指标，下面对各项指标进行展示分析
+</text>
+<view class="Text-bold padding text-xl">数据量：{{result.size}}份</view>
 <view class="bg-blue flex padding title">
   <view>实验室类别</view>
   <view>等级</view>
@@ -27,3 +31,17 @@
 <view class="ec-container padding-left-sm">
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec3 }}"></ec-canvas>
 </view>
+<view class="text-xl padding text-bold">4、评价系统二级指标数值</view>
+
+<view class="bg-blue flex padding title">
+  <view style="width: 440rpx;" class="text-center">指标名称</view>
+  <view>初始值</view>
+  <view>标准化值</view>
+</view>
+<view class="bg-blue flex contents padding text-black text-xl" wx:for="{{lastArr}}">
+  <view style="width: 370rpx;">{{item.name}}</view>
+  <view>{{item.data}}</view>
+  <view>1</view>
+</view>
+
+<view class="margin-bottom"></view>
