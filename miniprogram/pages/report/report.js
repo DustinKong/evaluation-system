@@ -107,7 +107,7 @@ Page({
         for(let i=0;i<33;i++){
           let xx={};
           xx.name=explains[i];
-          xx.data=(res.data[0].data[i]*10).toFixed(4);;
+          xx.data=(res.data[0].data[i]*10).toFixed(5);;
           lastArr.push(xx);
         }
         that.setData({
