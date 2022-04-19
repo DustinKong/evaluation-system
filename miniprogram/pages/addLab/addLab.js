@@ -21,6 +21,17 @@ Page({
       },
       success:function(res){
         console.log(res)
+        wx.showToast({
+          title: '提交成功',
+          duration: 2000,
+          success: function () {
+            setTimeout(function () {
+             wx.switchTab({
+               url: '/pages/home/home',
+             })
+            }, 2000);
+          }
+        })
       }
     })
   },

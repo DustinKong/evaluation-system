@@ -178,8 +178,8 @@ Page({
           },
           yAxis: {
             type: 'value',
-            min: 0.0301,
-            max: 0.0305
+            min: 0.030296,
+            max: 0.030307
           },
           series: [{
             name: alpha,
