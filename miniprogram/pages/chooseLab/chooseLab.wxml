@@ -1,12 +1,12 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">选择实验室</view>
+  <view slot="content">选择跨学科学术组织</view>
 </cu-custom>
 <view wx:if="{{type=='2'}}" class="cu-list menu card-menu margin-top" >
   <view  class="cu-item arrow" bindtap="goSum" data-id="{{item.id}}">
       <view class="content">
         <text class="cuIcon-circlefill text-grey"></text>
-        <text class="text-red text-bold">实验室综合评估</text>
+        <text class="text-red text-bold">跨学科学术组织综合评估</text>
       </view>
     </view>
 </view>

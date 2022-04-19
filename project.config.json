@@ -40,7 +40,7 @@
     "ignoreUploadUnusedFiles": true
   },
   "appid": "wx675e9423e47c6d31",
-  "projectname": "%E8%B7%A8%E5%AD%A6%E7%A7%91%E5%AD%A6%E6%9C%AF%E7%BB%84%E7%BB%87%E8%AF%84%E4%BB%B7%E7%B3%BB%E7%BB%9F",
+  "projectname": "evaluation-system",
   "libVersion": "2.23.3",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
