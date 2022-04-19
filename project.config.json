@@ -2,7 +2,7 @@
   "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -41,7 +41,7 @@
   },
   "appid": "wx675e9423e47c6d31",
   "projectname": "evaluation-system",
-  "libVersion": "2.23.3",
+  "libVersion": "2.23.4",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
