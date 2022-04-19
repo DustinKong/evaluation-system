@@ -18,6 +18,16 @@ Page({
         return chart1;
       }
     },
+    ec2: {
+      onInit: function (canvas, width, height) {
+        chart2 = echarts.init(canvas, null, {
+          width: width,
+          height: height
+        });
+        canvas.setChart(chart2);
+        return chart2;
+      }
+    },
     constants: [{
         "id": "1",
         "ids": "id1",
@@ -186,6 +196,90 @@ Page({
           },
           yAxis: {
             type: 'value'
+          },
+          series: ser
+        })
+      }
+    })
+    db.collection("result").get({
+      success:function(res){
+        console.log(res.data);
+
+        let tmp=res.data;
+        let ser = [];
+        let name=[];
+        for(let i of tmp){
+
+          i.alpha = String.fromCharCode('A'.charCodeAt(0) + parseInt(i.labId - 1))
+          let t = {};
+          t.name = i.alpha;
+          t.type = "line";
+          t.smooth = true;
+          t.data = i.data
+          ser.push(t);
+          name.push(i.alpha)
+        }
+        chart1.setOption({
+          title: {
+            text: "实验室与各等级贴合度",
+            textStyle: {
+              color: '#333',
+              fontWeight: 'bold',
+              fontSize: 14,
+            }
+          },
+          tooltip: {
+            trigger: 'axis',
+            confine: true, // 加入这一句话
+          },
+          legend: {
+            data: name,
+            right: 20,
+            top: 20
+          },
+
+          xAxis: {
+            type: 'category',
+            data: ['不合格', '合格', '良好', '优秀'],
+          
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: ser
+        })       
+        let tmp2 = new Array(33);
+        for (let i = 1; i <= 33; i++) {
+          tmp2[i - 1] = i;
+        }
+         chart2.setOption({
+          title: {
+            text: "实验室各项指标",
+            textStyle: {
+              color: '#333',
+              fontWeight: 'bold',
+              fontSize: 14,
+            }
+          },
+          tooltip: {
+            trigger: 'axis',
+            confine: true, // 加入这一句话
+          },
+          legend: {
+            data: name,
+            right: 20,
+            top: 20
+          },
+
+          xAxis: {
+            type: 'category',
+            data: tmp2,
+          
+          },
+          yAxis: {
+            type: 'value',
+            min: 0.030296,
+            max: 0.030307
           },
           series: ser
         })

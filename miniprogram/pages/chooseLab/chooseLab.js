@@ -1,4 +1,5 @@
 // pages/chooseLab/chooseLab.js
+const db = wx.cloud.database();
 Page({
 
   /**
@@ -49,8 +50,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that=this
     this.setData({
       type:options.type
+    })
+    db.collection("lab").get({
+      success: function(res) {
+        // res.data 包含该记录的数据
+        console.log(res.data)
+        let tmp=res.data;
+        for(let i of tmp){
+          i.title="跨学科学术组织"+String.fromCharCode('A'.charCodeAt(0) + parseInt(i.labId - 1))
+          i.id=i.labId
+        }
+        that.setData({
+          Lab:tmp
+        })
+      }
     })
   },
 

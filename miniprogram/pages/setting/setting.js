@@ -17,6 +17,7 @@ Page({
   save() {
     console.log('save')
     let that = this
+    wx.setStorageSync('type', that.data.type == false ? 1 : 2)
     db.collection('user').where({
       _openid: wx.getStorageSync('openId')
     }).update({

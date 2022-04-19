@@ -20,4 +20,8 @@
     <view  class="text-xl text-bold">分析报告</view>
   </view>
 </view>
+<view class="align padding" bindtap="go3" wx:if="{{type==2}}">
+    <image src="/images/file-add-fill.png" class="pic"></image>
+    <view  class="text-xl text-bold">增加实验室</view>
+  </view>
 <!-- <button bindtap="go">go</button> -->

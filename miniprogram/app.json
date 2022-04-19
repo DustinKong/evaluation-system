@@ -20,7 +20,8 @@
     "pages/setting/setting",
     "pages/chooseLab/chooseLab",
     "pages/sum/sum",
-    "pages/pre/pre"
+    "pages/pre/pre",
+    "pages/addLab/addLab"
   ],
   "window": {
     "navigationStyle": "custom",

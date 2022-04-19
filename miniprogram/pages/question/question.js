@@ -1,7 +1,7 @@
 // pages/question/question.js
 const db = wx.cloud.database();
 const _ = db.command;
-const times=500
+const times=5
 Page({
 
   /**
@@ -51,18 +51,18 @@ Page({
             answer: answer,
           },
           success: function (res) {
-            // console.log(res);
-            // wx.showToast({ 
-            //   title: '提交成功',
-            //    duration: 2000,
-            //    success: function() { 
-            //     setTimeout(function() { 
-            //       wx.navigateBack({
-            //         delta: 1,
-            //       })
-            //     }, 2000); 
-            //   }
-            // })
+            console.log(res);
+            wx.showToast({ 
+              title: '提交成功',
+               duration: 2000,
+               success: function() { 
+                setTimeout(function() { 
+                  wx.navigateBack({
+                    delta: 1,
+                  })
+                }, 2000); 
+              }
+            })
           },
           fail: console.error
         })

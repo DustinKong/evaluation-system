@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    type:1,
     swiperList: [{
       'id': 0,
       'url': 'https://636c-cloud1-9gw00z6jf0901e86-1310404954.tcb.qcloud.la/swiper3.png?sign=f95a591353811bca1f7acaf2ec9c7c3b&t=1649771266'
@@ -34,9 +35,14 @@ Page({
     wx.navigateTo({
       url: '/pages/pre/pre',
     })
-
   },
-
+  go3() {
+    if(!this.judge())
+    return;
+    wx.navigateTo({
+      url: '/pages/addLab/addLab',
+    })
+  },
   judge() {
     let info=wx.getStorageSync('userInfo');
     if ( info == null) {
@@ -77,14 +83,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      type:wx.getStorageSync('type')
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      type:wx.getStorageSync('type')
+    })
   },
 
   /**

@@ -92,6 +92,13 @@
           "name": "",
           "pathName": "pages/sum/sum",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/sum/sum",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

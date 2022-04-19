@@ -242,7 +242,7 @@ Page({
     let that = this
     console.log('reReport')
     this.analyze1();
-    //this.analyze2();
+    this.analyze2();
     setTimeout(function () {
       that.onLoad({
         "id": that.data.id
