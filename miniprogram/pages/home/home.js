@@ -87,7 +87,11 @@ Page({
       type:wx.getStorageSync('type')
     })
   },
-
+  go4(){
+    wx.navigateTo({
+      url: '/pages/delete/delete',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

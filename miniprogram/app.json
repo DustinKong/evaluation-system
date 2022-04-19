@@ -21,7 +21,8 @@
     "pages/chooseLab/chooseLab",
     "pages/sum/sum",
     "pages/pre/pre",
-    "pages/addLab/addLab"
+    "pages/addLab/addLab",
+    "pages/delete/delete"
   ],
   "window": {
     "navigationStyle": "custom",

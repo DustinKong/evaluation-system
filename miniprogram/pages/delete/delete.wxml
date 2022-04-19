@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">删除实验室</view>
+</cu-custom>
+
+<view class="cu-form-group margin-top">
+		<view class="title">实验室编号</view>
+		<input placeholder="请输入编号" bindinput="in"></input>
+	</view>
+
+  <button class="cu-btn bg-red margin-tb-sm lg" bindtap="add">新增</button>
