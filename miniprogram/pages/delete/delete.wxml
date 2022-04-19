@@ -5,7 +5,7 @@
 
 <view class="cu-form-group margin-top">
 		<view class="title">实验室编号</view>
-		<input placeholder="请输入编号" bindinput="in"></input>
+		<input placeholder="请输入删除实验室的编号" bindinput="in"></input>
 	</view>
 
-  <button class="cu-btn bg-red margin-tb-sm lg" bindtap="add">新增</button>
+  <button class="cu-btn bg-red margin-tb-sm lg" bindtap="add">删除</button>
